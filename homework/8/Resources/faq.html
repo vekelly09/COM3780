@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html><!--
+This file and all linked documents are, unless otherwise specified, authored by Marty Stepp, and may not be copied, redistributed, or modified without his/her permission.
+--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>COM3780</title>
+
+		<meta charset="utf-8">
+		<meta name="author" content="Marty Stepp">
+		<meta name="description" content="Course web site for CSE 190 M, an introduction to web programming at the University of Washington.">
+		<meta name="keywords" content="web programming, Marty Stepp, CSE 190 M, Washington, UW, computer science, HTML, XHTML, JavaScript, Ajax, XML, PHP, SQL">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">		
+
+		<!-- stop the web browser from ever caching this page or its images -->
+		<!--
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		-->
+
+		<link href="faq_files/style.css" type="text/css" rel="stylesheet">
+
+		<script src="faq_files/prototype.js" type="text/javascript"></script>
+		<script src="faq_files/scriptaculous.js" type="text/javascript"></script><script type="text/javascript" src="faq_files/builder.js"></script><script type="text/javascript" src="faq_files/effects.js"></script><script type="text/javascript" src="faq_files/dragdrop.js"></script><script type="text/javascript" src="faq_files/controls.js"></script><script type="text/javascript" src="faq_files/slider.js"></script><script type="text/javascript" src="faq_files/sound.js"></script>
+		<script src="faq_files/sorttable.js" type="text/javascript"></script>
+		<script src="faq_files/cse.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div id="container">
+
+
+		<h2>Homework 8 (Baby Names Redux)  <abbr title="Frequently Asked Questions">FAQ</abbr></h2>
+
+		<dl>
+			<dt id="lost">
+				Q: I'm lost.  I don't really understand Ajax.  What should I do?
+			</dt>
+			<dd>
+				A: Read textbook Chapter 12, particularly the case study.  Look at 
+the slides and programs from lecture, and the lab and section solutions.
+			</dd>
+
+			<dt id="ajaxdebug">
+				Q: My page just sits there; nothing happens.  How do I know whether an Ajax request is working properly or not?
+			</dt>
+			<dd>
+				A: Open your Firebug "Net" tab or Chrome debugger's "Network" tab.
+				This tab will list all requests made by your page.
+				You can click on a request to view the response that came back from the server.
+			</dd>
+
+			<dt id="slowload">
+				Q: Why does my page load the list of names veeeeerrry slowly?
+			</dt>
+			<dd>
+				A: Use the DOM to add elements to the page.  Don't just concatenate strings to <code>innerHTML</code> .
+			</dd>
+
+			<dt id="selectname">
+				Q: The list of names is really long, so it is a pain to scroll down to the name I want to test.  Is there a better way?
+			</dt>
+			<dd>
+				A: If the name select box has the keyboard's focus (such as if you 
+click on it to open it), you can usually start to type the beginning of a
+ name, and the box will jump to that name in the list.
+				For example, to quickly select "Morgan", click the select box and 
+type M, O, R...
+			</dd>
+			
+			<dt id="round">
+				Q: Sometimes the height I compute for a bar is a decimal, like 123.45px .  What should I do about this?
+			</dt>
+			<dd>
+				A: Round down by calling <code>parseInt</code>.
+			</dd>
+
+			<dt id="slowload">
+				Q: What happens with a 0 ranking?
+			</dt>
+			<dd>
+				A: It should be displayed as a 0-height bar.
+			</dd>
+
+			<dt id="ajaxerrortest">
+				Q: How do I test an Ajax failure/error case to see what my code will do?
+			</dt>
+			<dd>
+				A: To test <code>onFailure</code>, in your code that makes the Ajax request, change the request URL to some bogus URL <em>on webster</em> for a page that doesn't really exist.
+				To test <code>onException</code>, try requesting a URL that is not even on webster, such as http://www.google.com/ .
+			</dd>
+			
+			<dt id="errorloading">
+				Q: What should happen to the "loading..." divs if there is an error?
+			</dt>
+			<dd>
+				A: On any error, you should hide all of the loading divs.
+				Since this is not super clear in the spec, we will probably be 
+somewhat lenient about exactly what happens to the loading divs when an 
+error occurs.
+			</dd>
+			
+			<dt id="ajaxoptions">
+				Q: My Ajax requests aren't working.  When I debug them in Firebug's 
+Net tab, I see "OPTIONS" and an XML processing error.  Why?
+			</dt>
+			<dd>
+				A: This happens when you're requesting an HTTPS URL from a regular 
+HTTP site or vice versa.  It's probably that you put a complete URL such
+ as "http://webster..." in your code rather than just a relative path.  
+Or change your URL in your code to say "https" rather than "http" or 
+vice versa.
+			</dd>
+
+			<dt id="remove">
+				Q: How do I remove an existing element from the page?
+			</dt>
+			<dd>
+				A: Thanks to Prototype, for most elements you can say <code>$("elementID").remove();</code>
+				<!--
+				<br />
+				But if you happen to be removing a <code>select</code> element, you have to say <code>Element.remove("elementID");</code> because <code>select</code> elements already have their own <code>remove</code> method that does something else.
+				-->
+			</dd>
+
+			<dt id="errormsg">
+				Q: If I have displayed an error message on the screen, and the user 
+selects another name, should the error stay on the screen or go away?
+			</dt>
+			<dd>
+				A: It should go away.
+			</dd>
+
+			<dt id="websterstopsworking">
+				Q: After a little bit of time testing my page, it will stop running 
+any Ajax requests.  The request doesn't even show up in the NET tab in 
+Firebug.  It can be fixed by closing and reopening the window.  Why is 
+this happening?
+			</dt>
+			<dd>
+				A: It may be due to webster's security.
+				When you log in to webster with your UW NetID, it puts a "cookie" on
+ your computer that remembers your login info.
+				After a while, the cookie expires.
+				If the cookie is expired, you can get a new cookie by refreshing the
+ page in your browser; it should make you log in again, and then Ajax 
+requests should work.
+				Maybe your login cookie expires and it makes you log in again before
+ any more Ajax requests will go through.
+			</dd>
+
+			<dt id="successthenfail">
+				Q: When an Ajax request is made, first it runs my <code>onSuccess</code>r handler, and then it also runs my <code>onFailure</code> or <code>onException</code> handler!  Why is it running both?
+			</dt>
+			<dd>
+				A: You probably have a coding error in your <code>onSuccess</code> handler.
+				One odd thing about Prototype's <code>Ajax.Request</code> is that when you have a JavaScript syntax error or runtime error (such as dereferencing a null pointer) in your <code>onSuccess</code> code, it treats this the same as if the request itself failed.
+				The syntax/coding error causes an exception, which causes the <code>Ajax.Request</code> to execute your <code>onException</code> handler.
+				Check the syntax of your <code>onSuccess</code> code for errors (use JSLint, etc.) and try again.
+			</dd>
+		</dl>
+
+                   
+		</div>
+
+		<div id="w3c">
+			<div>
+				<a target="_blank" class="popup" href="http://validator.w3.org/check/referer"><img src="faq_files/w3c-html.png" alt="Valid HTML5"></a>
+				<a target="_blank" class="popup" href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3"><img src="faq_files/w3c-css.png" alt="Valid CSS"></a>
+				<a target="_blank" class="popup" href="https://webster.cs.washington.edu/jslint/?referer"><img src="faq_files/jslint.png" alt="JavaScript Lint"></a>
+			</div>
+			
+			<div class="copyrightnotice">
+				This document and its content are copyright © Marty Stepp, 2012.  
+All rights reserved.  Any redistribution, reproduction, transmission, or
+ storage of part or all of the contents in any form is prohibited 
+without the author's expressed written permission.
+			</div>
+		</div>
+	
+
+
+</body></html>

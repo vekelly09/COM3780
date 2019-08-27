@@ -1,0 +1,188 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<!--
+This file and all linked documents are, unless otherwise specified, authored by Marty Stepp and/or Roy McElmurry IV, and may not be copied, redistributed, or modified without his/her permission.
+-->
+	<head>
+		<title>CSE 190 M, Summer 2012</title>
+
+		<meta charset="utf-8" />
+		<meta name="author" content="Marty Stepp, Roy McElmurry IV" />
+		<meta name="description" content="Course web site for CSE 190 M, an introduction to web programming at the University of Washington." />
+		<meta name="keywords" content="web programming, Roy McElmurry, CSE 190 M, Washington, UW, computer science, HTML, XHTML, JavaScript, Ajax, XML, PHP, SQL" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+
+		<!-- stop the web browser from ever caching this page or its images -->
+		<!--
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		-->
+
+		<link href="style.css" type="text/css" rel="stylesheet" />
+
+		<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+		<script src="../../lib/sorttable.js" type="text/javascript"></script>
+		<script src="../../cse.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div id="container">
+
+		<h2>Assignment 4(Kevin Bacon)  <abbr title="Frequently Asked Questions">FAQ</abbr></h2>
+
+		<dl>
+			<dt id="anylayout">
+				Q: On the spec, you say that I can be creative and make up my own page appearance and layout.
+				So I can make it look absolutely any way I want?
+			</dt>
+			<dd>
+				A: As long as it follows the guidelines on the spec.  And, practically speaking, the TAs need to be able to grade it, so please don't put anything too weird in there, such as a bunch of videos or animations that are hard to load and see clearly.
+			</dd>
+
+			<dt id="copylayout">
+				Q: Is it okay for me to completely copy the layout from the expected output images, right?
+			</dt>
+			<dd>
+				A: Sure, if you want.
+			</dd>
+
+			<dt id="connect">
+				Q: Why can't my code connect to ycfac197?  It says, <code>Access denied for user 'MYYUNETID'@'ycfac197.mc.yu.edu' (using password: YES) </code>
+			</dt>
+			<dd>
+				A: When you construct your <code>new PDO</code> object, use the server name <code>"localhost"</code>, not "ycfac197.mc.yu.edu".
+				Also make sure you don't have any spaces in the connection string, and that you spell everything exactly right.
+			</dd>
+
+			<dt id="queries">
+				Q: Why don't my queries work in PHP?
+			</dt>
+			<dd>
+				A: Lots of students have small syntax problems in their SQL queries.  The best way to find and fix them is to use the MySQL console through SSH.  The console will tell you if your query has any syntax errors.  Ask a TA if you don't understand the error messages.  Once your query works in the console, just wrap it in quotes as a PHP string and you're nearly there.
+
+				<p>
+					If your query works in the console but not in PHP, try to <code>print()</code> the query before you run it.  Then copy/paste the printed text into the console and try to run it there.  Often you'll discover you are missing quotes or a semicolon or some other small syntax problem.  Also enable exceptions in your PDO object (as described in the textbook and lecture slides) so that if anything is going wrong, you will see an error on the page.
+				</p>
+			</dd>
+
+			<dt id="queries2">
+				Q: When I try to paste a query from my text editor into the SSH MySQL console, it says something like, <code>Display all 794 possibilities? (y or n)</code> and doesn't run the query.
+			</dt>
+			<dd>
+				A: Queries in the console need to end with a semicolon.  Also queries that occupy multiple lines shouldn't have leading tabs on any lines if you want to paste them into the console.  Leading spaces are okay.
+			</dd>
+
+			<dt id="nomovies">
+				Q: What if an actor hasn't been in any films at all?
+			</dt>
+			<dd>
+				A: You may assume that this won't happen.  If they're in the actors table, assume that they have been in at least one movie.
+			</dd>
+
+			<dt id="foreach">
+				Q: When I try to do a <code>foreach</code> loop over my <code>$rows</code>, nothing happens.
+			</dt>
+			<dd>
+				A: One weird thing about the <code>$rows</code> object (which behaves somewhat like an array, but is actually an object of type <code>PDOStatement</code>) is that you can only do one <code>foreach</code> over its rows.
+				If you try to <code>foreach</code> over it a second time, no rows will be there.
+				The first <code>foreach</code> loop "consumes" the rows as it returns them, sort of like an iterator.
+				You'll need to find a solution that doesn't use two <code>foreach</code> loops over the same <code>$rows</code> object.
+			</dd>
+
+			<!--
+			<dt id="formsubmitstop">
+				Q: How do I stop a form from submitting?
+			</dt>
+			<dd>
+				A: See section 9.2.4 of the textbook.  A common mistake here is to listen to the <code>click</code> event on a button; you should not do so.  Listen to the <code>submit</code> event on the form itself, and stop that event.
+			</dd>
+
+			<dt id="ajaxsubmit">
+				Q: My Ajax code for <code>actorid.php</code> isn't submitting to the right place!  Why not?
+			</dt>
+			<dd>
+				A: There may be a conflict between your form's <code>action</code> attribute and the URL you want the Ajax to submit to.
+			</dd>
+
+			<dt id="formsubmitfail">
+				Q: When I try to submit my form in JavaScript by calling <code>submit()</code> on it, nothing happens.  Why not?
+			</dt>
+			<dd>
+				A: A common reason for this is when students have a button whose id is <code>submit</code> inside their form.  This causes a conflict with the form's <code>submit</code> function.  Choose another id for your button.
+			</dd>
+
+			<dt id="connectajaxphp">
+				Q: How do I connect the actorid Ajax search to the overall actor search form?
+			</dt>
+			<dd>
+				A: Your overall front page has a form on it.  When you do the actorid Ajax search, you'll find out an ID to search for.  Insert that id into your form's data to be submitted, then use JavaScript code to submit the form.  A form's DOM object does have a <code>.submit()</code> method that you can call.
+			</dd>
+
+			<dt id="jsrequired">
+				Q: Do I have to turn in the .js file?
+			</dt>
+			<dd>
+				A: Most students will need the .js file to talk to the actorid.php service.  If you are doing a set of extra features that removes your need for that service, you might not need any JavaScript code.  In such a case, you can turn in a blank .js file.
+			</dd>
+
+			<dt id="ajaxsearch">
+				Q: If I do a bunch of extra features so that my search.php is basically just an Ajax service, do I still need to follow the appearance criteria in the spec about "The same title and links to the same CSS and JavaScript resources." and "The search.php page should contain a link back to mymdb.php if the user wants to start over"?
+			</dt>
+			<dd>
+				A: No; if your search.php is just a service contacted by Ajax, it doesn't make sense for it to have back links and shared resources.
+			</dd>
+
+			<dt id="ajaxback">
+				Q: If I do the Ajax search feature, do I still need a "back" link like it says in the spec?
+			</dt>
+			<dd>
+				A: You should have some kind of link to restore the page to its original state.
+			</dd>
+
+			<dt id="pageredundancy">
+				Q: How do I remove redundancy between pages?
+			</dt>
+			<dd>
+				A: Put common code in <code>common.php</code>.  See the provided <code>index.php</code> code as an example.
+			</dd>
+
+		-->
+
+			<dt id="errorvalid">
+				Q: When there is an "actor not found" or "actor has not appeared in any movies with Kevin Bacon" error, does my page still have to be W3C valid?
+			</dt>
+			<dd>
+				A: Yes, it should.  If an error makes you want to abort your page, make sure to still output the bottom page content, like the search forms and <code>&lt;/body&gt;</code> and so on.
+			</dd>
+		</dl>
+
+ 
+               
+		</div>
+
+		<div id="w3c">
+			<div>
+				<a class="popup" href="http://validator.w3.org/check/referer">
+					<img src="images/w3c-html.png" alt="Valid HTML5" />
+				</a>
+				<a class="popup" href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+					<img src="images/w3c-css.png" alt="Valid CSS" />
+				</a>
+				<a class="popup" href="https://webster.cs.washington.edu/jslint/?referer">
+					<img src="images/jslint.png" alt="JavaScript Lint" />
+				</a>
+			</div>
+			
+			<div class="copyrightnotice">
+				This document and its content are copyright &copy; Marty Stepp, Roy McElmurry IV, 2012.  All rights reserved.  Any redistribution, reproduction, transmission, or storage of part or all of the contents in any form is prohibited without the author's expressed written permission.
+			</div>
+		</div>
+	</body>
+</html>
+

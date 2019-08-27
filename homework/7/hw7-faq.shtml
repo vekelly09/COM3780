@@ -1,0 +1,155 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<!--
+This file and all linked documents are, unless otherwise specified, authored by Marty Stepp and/or Roy McElmurry IV, and may not be copied, redistributed, or modified without his/her permission.
+-->
+	<head>
+		<title>Assignment 5 FAQ </title>
+
+		<meta charset="utf-8" />
+		<meta name="author" content="Marty Stepp, Roy McElmurry IV" />
+		<meta name="description" content="Course web site for CSE 190 M, an introduction to web programming at the University of Washington." />
+		<meta name="keywords" content="web programming, Roy McElmurry, CSE 190 M, Washington, UW, computer science, HTML, XHTML, JavaScript, Ajax, XML, PHP, SQL" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+
+		<!-- stop the web browser from ever caching this page or its images -->
+		<!--
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		-->
+
+		<link href="../../style.css" type="text/css" rel="stylesheet" />
+
+		<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+		<script src="../../lib/sorttable.js" type="text/javascript"></script>
+		<script src="../../cse.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div class="centerpane">
+
+
+		<h2>Homework 7 (Fifteen Puzzle)  <abbr title="Frequently Asked Questions">FAQ</abbr></h2>
+
+		<dl>
+			<dt id="stuck">
+				Q: I am stuck.  Nothing works.  Help me!
+			</dt>
+			<dd>
+				A: Try doing these things:
+
+				<ul>
+					<li>JSLint your page first.</li>
+					<li>Make sure Chrome Dev Tools doesn't give any red error message text at bottom-right.</li>
+					<li>Put a JS <code>alert</code> at the top of your file and/or function and see if it shows up.</li>
+					<li>Try the Chrome debugger and see if you can step through and find the bug.</li>
+				</ul>
+			</dd>
+
+			<dt id="background">
+				Q: I can't get the background image to show up properly on the tiles.
+			</dt>
+			<dd>
+				A: Make sure you are setting the CSS <code>background-image</code> property on the tiles properly in your JS code.  Try <code>alert</code>ing the exact string you're setting it to.  Remember that it should be a string storing a pair of values with units after them, such as "100px 300px".  Also remember that the offsets you need to shift the image behind each tile may be negative, such as "-100px -300px".  Note that there isn't a comma in the string; it is two integers, each with "px" after, separated by a space.  You may have to build said string using variables' values.
+			</dd>
+
+			<dt id="structure">
+				Q: I don't know how to structure my code.  It is an ugly mess.
+			</dt>
+			<dd>
+				A: Most of your functions are probably event handlers, but you can add more functions to clean up your code.  Create helper functions to do important things in your program, such as:
+
+				<ul>
+					<li>move a given square to the location of the empty square</li>
+					<li>determine whether a given square can move right now or not</li>
+					<li>figuring out the row or column of a given square, based on its <code>left</code>/<code>top</code> style values</li>
+				</ul>
+
+				<p>
+					Try to make your code read more like English.  "If I can move this square, move it to the location of the empty square."  If your code doesn't have methods for those things, you need more procedural breakdown of the problem.
+				</p>
+			</dd>
+
+			<dt id="movable">
+				Q: How do I figure out which pieces are movable and make them 'light up' when the user hovers over them?
+			</dt>
+			<dd>
+				A: The squares that are neighbors of the empty square are the ones that should light up when hovered upon.  If you are keeping track of the location of the empty square, you should be able to tell for any given other square, whether that square is next to the empty square.  You could choose to apply a <code>moveablepiece</code> class attribute to such squares as a target for CSS styling.
+			</dd>
+
+			<dt id="emptydiv">
+				Q: Is it okay if I make an empty <code>div</code> element to represent the empty square in my puzzle?
+			</dt>
+			<dd>
+				A: You shouldn't need to do this, we recommend not doing this.  But you can use the JS to add an empty <code>div</code> if you like, if it makes your code easier to write.
+			</dd>
+
+			<dt id="shuffle">
+				Q: How do I shuffle?
+			</dt>
+			<dd>
+				A: A decent pseudo-code for shuffling is the following:
+
+				<pre>
+for (~200 times):
+    figure out all the squares that neighbor the empty square.
+    put them into an array or something.
+    randomly choose an element of that array.
+    swap the randomly chosen element with the empty square.
+</pre>
+			</dd>
+
+			<dt id="fakeevent">
+				Q: How do I "simulate a click" on a square?  I want to run my square <code>click</code> handler function, without having to actually click on the square.
+			</dt>
+			<dd>
+				A: Look at the jQuery documentation of the <code>.click()</code> method.
+			</dd>
+
+			<dt id="shufflesolve">
+				Q: My code pops up a message when the user solves the puzzle.  But now when shuffling the board, it sometimes pops up that same message!  The shuffle is "solving" the puzzle.  How do I stop it from doing that?
+			</dt>
+			<dd>
+				A: You need to decouple the movement logic from the "check to see if the game is over" logic.  Put them into separate functions.
+			</dd>
+
+			<dt id="shuffleanimate">
+				Q: If I am making my board do the animation feature, do I need to also animate my shuffle?  It goes really slow if I do.
+			</dt>
+			<dd>
+				A: No, your shuffle doesn't need to animate.
+			</dd>
+
+		</dl>
+
+ 
+                    </div>
+		</div>
+
+		<div id="w3c">
+			<div>
+				<a class="popup" href="http://validator.w3.org/check/referer">
+					<img src="../../images/w3c-html.png" alt="Valid HTML5" />
+				</a>
+				<a class="popup" href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+					<img src="../../images/w3c-css.png" alt="Valid CSS" />
+				</a>
+				<a class="popup" href="https://webster.cs.washington.edu/jslint/?referer">
+					<img src="../../images/jslint.png" alt="JavaScript Lint" />
+				</a>
+			</div>
+			
+			<div class="copyrightnotice">
+				This document and its content are copyright &copy; Marty Stepp, Roy McElmurry IV, 2012.  All rights reserved.  Any redistribution, reproduction, transmission, or storage of part or all of the contents in any form is prohibited without the author's expressed written permission.
+			</div>
+		</div>
+	</body>
+</html>
+

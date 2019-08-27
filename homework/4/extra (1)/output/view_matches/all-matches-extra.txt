@@ -1,0 +1,114 @@
+Ada Lovelace (none)
+Adele Goldberg, Bill Gates
+Alan Turing (none)
+Anakin Skywalker, Lara Croft
+Anakin Skywalker, Leeloo
+Anakin Skywalker, Nostalgia Critic
+Angry Video Game Nerd, Jadzia Dax
+Angry Video Game Nerd, Ms Frizzle
+Angry Video Game Nerd, Natalie Portman
+Angry Video Game Nerd, Stewie Griffin
+Angry Video Game Nerd, Stuart Reges
+Angry Video Game Nerd, Vint Cerf
+Anita Borg, Bill Gates
+Barbara Liskov (none)
+Bill Gates, Adele Goldberg
+Bill Gates, Anita Borg
+Bill Gates, Grace Hopper
+Bill Gates, Leia Organa
+Bill Gates, Mary Lou Jepsen
+Bill Gates, Sarah Connor
+Bill Gates, Zelda
+Bill Joy, Richard Stallman
+Bjarne Stroustroup, Leia Organa
+Bjarne Stroustroup, Mary Lou Jepsen
+Bjarne Stroustroup, Roberta Williams
+Bjarne Stroustroup, Sarah Connor
+Buffy Summers, Mary Lou Jepsen
+Buffy Summers, Oldspice Guy
+Buffy Summers, Seven of Nine
+Charles Babbage (none)
+Dana Scully, Deanna Troi
+Dana Scully, Ms Frizzle
+Deanna Troi, Dana Scully
+Donald Knuth (none)
+Edsger Dijkstra, Leeloo
+Ellen Ripley (none)
+Frances Allen (none)
+Gordon Moore (none)
+Grace Hopper, Bill Gates
+Jadzia Dax, Angry Video Game Nerd
+James Gosling, Leeloo
+Jeannette Wing, Tyler Durden
+Kathryn Janeway, Leia Organa
+Kathryn Janeway, Mary Lou Jepsen
+Kathryn Janeway, Rosie O Donnell
+Kathryn Janeway, Seven of Nine
+Lara Croft, Anakin Skywalker
+Lara Croft, Leeloo
+Lara Croft, Nostalgia Critic
+Lara Croft, River Tam
+Leeloo, Anakin Skywalker
+Leeloo, Edsger Dijkstra
+Leeloo, James Gosling
+Leeloo, Lara Croft
+Leeloo, Nostalgia Critic
+Leeloo, Rasmus Lerdorf
+Leeloo, River Tam
+Leia Organa, Bill Gates
+Leia Organa, Bjarne Stroustroup
+Leia Organa, Kathryn Janeway
+Leia Organa, Mary Lou Jepsen
+Leia Organa, Oldspice Guy
+Lenore Blum (none)
+Marissa Mayer, Nostalgia Critic
+Mary Lou Jepsen, Bill Gates
+Mary Lou Jepsen, Bjarne Stroustroup
+Mary Lou Jepsen, Buffy Summers
+Mary Lou Jepsen, Kathryn Janeway
+Mary Lou Jepsen, Leia Organa
+Mary Lou Jepsen, Oldspice Guy
+Mary Lou Jepsen, Rosie O Donnell
+Mary Lou Jepsen, Seven of Nine
+Ms Frizzle, Angry Video Game Nerd
+Ms Frizzle, Dana Scully
+Ms Frizzle, Tyler Durden
+Natalie Portman, Angry Video Game Nerd
+Niklaus Wirth (none)
+Nostalgia Critic, Anakin Skywalker
+Nostalgia Critic, Lara Croft
+Nostalgia Critic, Leeloo
+Nostalgia Critic, Marissa Mayer
+Nostalgia Critic, Rasmus Lerdorf
+Nyota Uhura (none)
+Oldspice Guy, Buffy Summers
+Oldspice Guy, Leia Organa
+Oldspice Guy, Mary Lou Jepsen
+Oldspice Guy, Seven of Nine
+Oldspice Guy, Tpol
+Rasmus Lerdorf, Leeloo
+Rasmus Lerdorf, Nostalgia Critic
+Richard Stallman, Bill Joy
+River Tam, Lara Croft
+River Tam, Leeloo
+Roberta Williams, Bjarne Stroustroup
+Rosie O Donnell, Kathryn Janeway
+Rosie O Donnell, Mary Lou Jepsen
+Rosie O Donnell, Seven of Nine
+Sarah Connor, Bill Gates
+Sarah Connor, Bjarne Stroustroup
+Seven of Nine, Buffy Summers
+Seven of Nine, Kathryn Janeway
+Seven of Nine, Mary Lou Jepsen
+Seven of Nine, Oldspice Guy
+Seven of Nine, Rosie O Donnell
+Stewie Griffin, Angry Video Game Nerd
+Stuart Reges, Angry Video Game Nerd
+Tpol, Oldspice Guy
+Trinity (none)
+Tyler Durden, Jeannette Wing
+Tyler Durden, Ms Frizzle
+Valentina Tereshkova (none)
+Vint Cerf, Angry Video Game Nerd
+Yukihiro Matsumoto (none)
+Zelda, Bill Gates
