@@ -1,0 +1,120 @@
+.autocomplete {
+	background-color: white;
+	border: 1px solid gray;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.autocomplete ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.autocomplete ul .selected {
+	background-color: #ffff88;
+}
+
+.autocomplete li {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#browsermessagearea {
+	text-align: center;
+	font-size: larger;
+}
+
+#compare {
+	float: right;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-left: 2em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+#compareform {
+	height: 12em;
+	right: 0px;
+	position: fixed;
+	top: 0px;
+	z-index: 9999;
+}
+
+#compareform legend {
+	background-color: white;
+}
+
+#errors {
+	margin-top: 12em;
+}
+
+fieldset {
+	background-color: white;
+}
+
+fieldset div {
+	text-align: right;
+}
+
+fieldset ol {
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+fieldset ul {
+	list-style-type: none;
+	margin-bottom: 0em;
+	margin-top: 0em;
+}
+
+fieldset ul, fieldset ol {
+	padding-left: 1.5em;
+}
+
+fieldset li {
+	line-height: 1.5em;
+	margin-bottom: 0.5em;
+	margin-top: 0em;
+}
+
+ol input[type="text"],
+select {
+	width: 52em;
+}
+
+label {
+	padding: 0.1em 0.5em 0.1em 0em;
+}
+
+#outputarea {
+	position: relative;
+}
+
+#output1,
+#output2 {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+#output1 {
+	padding-bottom: 50px;
+}
+
+#output2 {
+	width: 995px;
+	overflow: hidden;
+}
+
+#page2suggest, span.suggested {
+	display: none !important;
+}
